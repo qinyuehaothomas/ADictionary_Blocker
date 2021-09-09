@@ -1,11 +1,19 @@
 ## *Hi*😂*I am Thomas!*
 
+<<<<<<< HEAD
 *A little about myself...*  
+=======
+*A little about myself...*  
+>>>>>>> ed5ab3bd62c0fc828a653dd031538a807501cb30
 **Hometown :** Hong Kong, China  
 **Age :** 14  
 **English Level ...**<sub>Below sea level</sub>  
 **Hobby :** Computer<sup>and almost evrything about it.</sup>  
-- [X] Games
+<<<<<<< HEAD
+- [X] Games  
+=======
+- [X] Games  
+>>>>>>> ed5ab3bd62c0fc828a653dd031538a807501cb30
 - [X] Surfing Youtube
 - [X] Talking in computer languages
 - [ ] Facebook
