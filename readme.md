@@ -1,11 +1,11 @@
 ## *Hi*😂*I am Thomas!*
 
 *A little about myself...*
-**Hometown :** Hong Kong, China
-**Age :** 14
-**English Level ...**<sub>Below sea level</sub>
-**Hobby :** Computer<sup>and almost evrything about it.</sup>
-- [X] Games
+**Hometown :** Hong Kong, China  
+**Age :** 14  
+**English Level ...**<sub>Below sea level</sub>  
+**Hobby :** Computer<sup>and almost evrything about it.</sup>  
+- [X] Games  
 - [X] Surfing Youtube
 - [X] Talking in computer languages
 - [ ] Facebook
