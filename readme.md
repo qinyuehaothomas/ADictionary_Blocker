@@ -1,8 +1,7 @@
 ## *Hi*😂*I am Thomas!*
 
 *A little about myself...*  
-
-**Hometown :** Hong Kong, China      
+**Hometown :** Hong Kong, China  
 **Age :** 14  
 **English Level ...**<sub>Below sea level</sub>  
 **Hobby :** Computer<sup>and almost evrything about it.</sup>  
@@ -33,7 +32,7 @@
 1. if you want to add to wordlist:
     1. click the grey tick.
 
-## I guess now you have a breif idea on how to use it
+## Now you have a breif idea on how to use it
 
 
 
