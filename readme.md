@@ -18,15 +18,16 @@
 > Theres online reserch in school, **in english**.
 > And my brain become jellly when i am reading.
 > I **Don't** want to go back and forth for words.
+
 #### So, I made:
+
 <h2><center><b>ADictionary Blocker!!</b></center></h2>
 
 # <center>Lets watch the [Video](https://example.com/my-link "It sucks,I know")!</center>
 
 ## <center>Here's how to use it:</center>
 
-1. Download the code to ***Tampermonkey / Geasermonkey***
-OR [Click this](https://) to finish in one step
+1. Download the code to ***Tampermonkey / Geasermonkey*** OR [Click this](https://greasyfork.org/scripts/432144-adictionary-blocker/code/ADictionary%20Blocker.user.js) to finish in one step
 1. Enable it,
 1. Click on any word you don't know on any page(Some does not work...)
 1. if you want to add to wordlist:
