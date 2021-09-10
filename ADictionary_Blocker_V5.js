@@ -63,7 +63,7 @@ function setupDoubleClick(websiteUrl, dictionary, showFirstEntry, areaClass, max
             let word="<h3 style='font-style:italic;font-weight:bold;'>power by Cambridge Dictionary</h3><h1 id='word_adb_explain'style='font-style:italic;font-weight:bold;'>"+lookup+"</h1>";
             // test zone
             if(!localStorage.getItem('wordlist')){
-                localStorage.setItem("wordlist");
+                localStorage.setItem("wordlist","");
             }
             let cur_wl=localStorage.getItem('wordlist').split(":");
             //unique
@@ -89,18 +89,14 @@ function setupDoubleClick(websiteUrl, dictionary, showFirstEntry, areaClass, max
             }
             $("#adb_addword").click((e)=>{
                 lookup=$("#word_adb_explain").text();
-                console.log(lookup);
                     if(cur_wl.includes(lookup)){
                         $("#adb_addword").css("background-color","grey");
                         const index=cur_wl.findIndex((e)=>e===lookup);
-                        console.log(index);
                         delete cur_wl[index];
                         localStorage.setItem('wordlist', cur_wl.join(":"));
                     }else{
                         $("#adb_addword").css("background-color","green");
                         localStorage.setItem('wordlist', cur_wl.join(":")+":"+lookup);
-                        console.log(cur_wl);
-                        console.log(lookup);
                     }
                 });
             request.send();
@@ -135,10 +131,8 @@ function setupDoubleClick(websiteUrl, dictionary, showFirstEntry, areaClass, max
             searchUrl = urlCallback(websiteUrl, translateDictionary, showFirstEntry, lookup);
         else
             searchUrl = websiteUrl + "search/" + (translateDictionary ? translateDictionary + "/" : "") + (showFirstEntry ? "direct/" : "") + "?q=" + lookup;
-        console.log(lookup.replace(/[a-zA-Z0-9]/g, ''));
         if(lookup.replace(/[a-zA-Z0-9]/g, '')!=""){
             searchUrl="https://www.collinsdictionary.com/dictionary/chinese-english/"+lookup;
-            console.log(searchUrl);
         }
         if (target) {
             if (target == "self") {
@@ -188,16 +182,22 @@ function getSelectedText(){
         //if(!localStorage.getItem('wordlist')){
         //    localStorage.setItem("wordlist",".");
         //}
-        let cur_wl=localStorage.getItem('wordlist').split(":").slice(1);
-        let lookup= new String(_.sample(cur_wl));
-        //let lookup="cat";
         let request = new XMLHttpRequest();
-        request.open("GET","https://api.dictionaryapi.dev/api/v2/entries/en/"+lookup);
-        request.responseType="json";
-        let word="<h6 style='font-style:italic;font-weight:bold;'>power by Dictionary API</h6><h5 style='font-style:italic;font-weight:bold;'>"+lookup+"</h5>";
-
+        let word="Loading"
+        try{
+            let cur_wl=localStorage.getItem('wordlist').split(":").slice(1);
+            let lookup= new String(_.sample(cur_wl));
+            //let lookup="cat";
+            request.open("GET","https://api.dictionaryapi.dev/api/v2/entries/en/"+lookup);
+            request.responseType="json";
+            word="<h6 style='font-style:italic;font-weight:bold;'>power by Dictionary API</h6><h5 style='font-style:italic;font-weight:bold;'>"+lookup+"</h5>";
+        }catch(err){
+            let lookup="Loading";
+            request.open("GET","https://api.dictionaryapi.dev/api/v2/entries/en/"+lookup);
+            request.responseType="json";
+            word="Loading";
+        }
         request.onload=()=>{
-            console.log(request.response[0].meanings[0].definitions[0].definition);
             request.response[0].meanings.forEach((e)=>{
                 word+="<p>"+e.definitions[0].definition+"</p>";
                 word+="<span style='font-style:italic;opacity:0.5;'>"+e.partOfSpeech+"</span>";
@@ -209,12 +209,8 @@ function getSelectedText(){
                         adfinder.forEach((adid)=>{
                             if(elem.id.slice(0,adid.length)==adid){
                                 console.log(word);
-                                if(request.readyState==4){
-                                    elem.style.overflow="auto";
-                                    elem.innerHTML=word;
-                                }else{
-                                    elem.innerHTML="Loading..."
-                                }
+                                elem.style.overflow="auto";
+                                elem.innerHTML=word;
                                 //elem.style.visibility = 'hidden';
                                 //elem.style.width = '1px';
                                 //elem.style.height = '1px';
@@ -248,7 +244,7 @@ function getSelectedText(){
     if(interval === null) {
         interval = window.setInterval(function(){
         cleanup();
-    }, 7000);
+    }, 5000);
     }
 
 })();
