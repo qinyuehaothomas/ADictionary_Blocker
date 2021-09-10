@@ -57,7 +57,11 @@ function setupDoubleClick(websiteUrl, dictionary, showFirstEntry, areaClass, max
             let request = new XMLHttpRequest();
             request.open("GET","https://api.dictionaryapi.dev/api/v2/entries/en/"+lookup);
             request.responseType="json";
+            // add a popup to show define
+            // word is correct
+            // new,store things
             let word="<h3 style='font-style:italic;font-weight:bold;'>power by Cambridge Dictionary</h3><h1 id='word_adb_explain'style='font-style:italic;font-weight:bold;'>"+lookup+"</h1>";
+            // test zone
             if(!localStorage.getItem('wordlist')){
                 localStorage.setItem("wordlist");
             }
@@ -76,6 +80,7 @@ function setupDoubleClick(websiteUrl, dictionary, showFirstEntry, areaClass, max
                 $("#adb_explain").remove();
                 $("body").append("<div id='adb_explain'style='position:fixed;background-color:#fff;border:2px solid #000;width:450px;'><button id='delete_block' style='border-radius: 50%;border-width:0px;'>X</button><button id='adb_addword' style='border-radius: 50%;background-color:"+color+";border-width:0px;'>&#10004;</button>"+word+"</div>");
 
+            // test end
                 let block=document.querySelector("#adb_explain");
                 const size=block.getBoundingClientRect();
                 block.style.left=(1420-size.width).toString()+"px";
@@ -83,7 +88,8 @@ function setupDoubleClick(websiteUrl, dictionary, showFirstEntry, areaClass, max
                 $("#delete_block").click(()=>{$("#adb_explain").remove()});
             }
             $("#adb_addword").click((e)=>{
-                lookup=$("#word_adb_explain").innerText;
+                lookup=$("#word_adb_explain").text();
+                console.log(lookup);
                     if(cur_wl.includes(lookup)){
                         $("#adb_addword").css("background-color","grey");
                         const index=cur_wl.findIndex((e)=>e===lookup);
@@ -100,10 +106,11 @@ function setupDoubleClick(websiteUrl, dictionary, showFirstEntry, areaClass, max
             request.send();
 
             //append the layer to the DOM only once
+            // modify this part
             if ($("#definition_layer").length == 0) {
                 var imageUrl = websiteUrl + "external/images/doubleclick/definition-layer.gif";
                 $("body").append("<div id='definition_layer' style='position:absolute; cursor:pointer;'><img src='" + imageUrl + "' alt='' title=''/></div>");
-
+                //$("body").append("<div id='definition_layer' style='position:absolute; cursor:pointer;'>" + word + "</div>");
             }
 
             //move the layer at the cursor position
@@ -144,6 +151,7 @@ function setupDoubleClick(websiteUrl, dictionary, showFirstEntry, areaClass, max
         } else {
             window.open(searchUrl, 'cup_lookup');
         }
+        /*window.location.href = searchUrl;*/
     };
 
     var area = areaClass ? "." + areaClass : "body";
@@ -165,11 +173,21 @@ function getSelectedText(){
 (function() {
     'use strict';
     //setup clicker dictionary
+    // problem, it only give you the link
     setupDoubleClick( 'https://dictionary.cambridge.org/', 'english-chinese-traditional', true, null, 5, 'popup' );
     let adtype=["iframe","ytd-display-ad-renderer","ins","div"];
     let adfinder=["google_ads","aswift","mys-wrapper","midcontentadcontainer"];
+
+    // let interval = null;
+
+    // let hostname = document.location.hostname;
+    //make this the explain page,but not every go ad
+    // new
     function cleanup() {
 
+        //if(!localStorage.getItem('wordlist')){
+        //    localStorage.setItem("wordlist",".");
+        //}
         let cur_wl=localStorage.getItem('wordlist').split(":").slice(1);
         let lookup= new String(_.sample(cur_wl));
         //let lookup="cat";
@@ -197,6 +215,12 @@ function getSelectedText(){
                                 }else{
                                     elem.innerHTML="Loading..."
                                 }
+                                //elem.style.visibility = 'hidden';
+                                //elem.style.width = '1px';
+                                //elem.style.height = '1px';
+                                //elem.style.overflow = 'hidden';
+                                //elem.style.opacity = 0;
+                                //elem.remove();
                             }
                         });
 
@@ -209,6 +233,12 @@ function getSelectedText(){
         }
         request.send();
         document.body.dispatchEvent(new MouseEvent('mousemove'));
+        // modify this part
+        // if(sites[hostname].background) {
+        //     document.body.style.background = sites[hostname].background;
+        //     document.body.style.overflow = 'scroll';
+        //     document.body.style.position = 'static';
+        // }
 
 
     }
