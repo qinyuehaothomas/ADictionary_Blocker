@@ -16,21 +16,28 @@
 <h2> <b>ADictionary Blocker!!</b> </h2>
 
 ***Reason :***
-> Theres online reserch in school, **in english**.
-> And my brain become jellly when i am reading.
-> I **Don't** want to go back and forth for words.
+> Theres online reserch in school, **in english**.  
+> And my brain become jellly when i am reading.  
+> I **Don't** want to go back and forth for words.  
 
 ***Functions :***
-> You can search word by just **clicking** on it!
-> You can add it to your **wordlist**!
-> Ads will be replaced with word from your wordlist
-> to help you **revise**
+> You can search word by just **clicking** on it!  
+> You can add it to your **wordlist**!  
+> Ads will be replaced with word from your wordlist  
+> to help you **revise**  
 
 **Files**
-> there's only  single file called *ADictionary_Blocker_V5*
-> which will be installed in Tampermonkey / Geasermonkey to implyment the functions
+> there's only  single file called *ADictionary_Blocker_V5*  
+> which will be installed in Tampermonkey / Geasermonkey to implyment the functions  
 
 #  Lets watch the [Video](https://youtu.be/w1yiLb6y1Ok "It sucks,I know")! 
+
+**Source of idea and code**   
+**I combinde and modify them**  
+> The part of getting selected word is from a service in [Cambridge Dictionary](https://dictionary.cambridge.org/doubleclick.html )    
+> The ad-finding part if from a github project  
+> The api for dictionary is from [Free Dictionary API](https://dictionaryapi.dev/ )  
+
 
 ##  Here's how to use it: 
 
@@ -42,6 +49,13 @@
 
 ## Now you have a breif idea on how to use it
 
+## [Some Thoughts]("Ok, i admit i had to write this because of the word requirment. But the words are true.")
 
+> I learnt a bit of coding before taking the course  
+> but this course really changed my view to teh computer world.  
+> The course teach me more in ways of problem solving and computer thinking.  
+> I also picks up some useful skills like C and SQL alone the road.  
+> The course brings me to another level in computer.  
+> All the time on the course is an unforgetable journey.  
 
 <h1> Thanks for coming😁 </h1>
