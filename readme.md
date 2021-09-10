@@ -32,7 +32,7 @@
 
 ##  Here's how to use it: 
 
-1. Download the code to ***Tampermonkey / Geasermonkey*** OR [Click this](https://greasyfork.org/scripts/432144-adictionary-blocker/code/ADictionary%20Blocker.user.js) to finish in one step
+1. Download the code to ***Tampermonkey / Geasermonkey*** OR [Click this](https://greasyfork.org/scripts/432144-adictionary-blocker/code/ADictionary%20Blocker.user.js) to finish in one step (if you have intsalled Tampermonkey / Geasermonkey)
 1. Enable it,
 1. Click on any word you don't know on any page(Some does not work...)
 1. if you want to add to wordlist:
