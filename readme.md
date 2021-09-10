@@ -12,19 +12,25 @@
 - [ ] Discord
 - [ ] ..... I guess not everything.
 
-## My Whatever:
-#### ***Reason :***
+## My Project!:
+<h2> <b>ADictionary Blocker!!</b> </h2>
+
+***Reason :***
 > Theres online reserch in school, **in english**.
 > And my brain become jellly when i am reading.
 > I **Don't** want to go back and forth for words.
 
-#### So, I made:
+***Functions :***
+> You can search word by just **clicking** on it!
+> You can add it to your **wordlist**!
+> Ads will be replaced with word from your wordlist
+> to help you **revise**
 
-<h2><center><b>ADictionary Blocker!!</b></center></h2>
 
-# <center>Lets watch the [Video](https://example.com/my-link "It sucks,I know")!</center>
 
-## <center>Here's how to use it:</center>
+#  Lets watch the [Video](https://example.com/my-link "It sucks,I know")! 
+
+##  Here's how to use it: 
 
 1. Download the code to ***Tampermonkey / Geasermonkey*** OR [Click this](https://greasyfork.org/scripts/432144-adictionary-blocker/code/ADictionary%20Blocker.user.js) to finish in one step
 1. Enable it,
@@ -36,4 +42,4 @@
 
 
 
-<h1><center>Thanks for coming😁</center></h1>
+<h1> Thanks for coming😁 </h1>
